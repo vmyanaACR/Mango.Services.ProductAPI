@@ -1,0 +1,8 @@
+AutoMapper 
+AutoMapper.Extensions.Microsoft.DependencyInjection
+Microsoft.AspNetCore.Authentication.JwtBearer
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Swashbuckle.AspNetCore
+Swashbuckle.AspNetCore.Annotations
+Swashbuckle.AspNetCore.SwaggerUI
