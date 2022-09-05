@@ -1,3 +1,5 @@
+using System;
+
 namespace Mango.Services.ProductAPI;
 
 public class WeatherForecast
