@@ -19,6 +19,7 @@ IMapper mapper = MappingConfig.RegisterMap().CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddHealthChecks();
 
 
 var app = builder.Build();
@@ -41,7 +42,8 @@ using (var scope = scopeFactory.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     context.Database.Migrate();
-    Console.WriteLine("Migration is done!!!");
 }
+
+app.MapHealthChecks("/health");
 
 app.Run();
