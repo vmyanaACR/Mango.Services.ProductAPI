@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mango.Services.ProductAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220906072628_seedProducts")]
-    partial class seedProducts
+    [Migration("20221015145617_intial")]
+    partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,11 +25,11 @@ namespace Mango.Services.ProductAPI.Migrations
 
             modelBuilder.Entity("Mango.Services.ProductAPI.Models.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
 
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(max)");
@@ -46,14 +46,14 @@ namespace Mango.Services.ProductAPI.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProductId");
 
                     b.ToTable("Products");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            ProductId = 1,
                             CategoryName = "Appetizer",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
                             ImageUrl = "https://manorest.blob.core.windows.net/mango/14.jpg",
@@ -62,7 +62,7 @@ namespace Mango.Services.ProductAPI.Migrations
                         },
                         new
                         {
-                            Id = 2,
+                            ProductId = 2,
                             CategoryName = "Appetizer",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
                             ImageUrl = "https://manorest.blob.core.windows.net/mango/12.jpg",
@@ -71,7 +71,7 @@ namespace Mango.Services.ProductAPI.Migrations
                         },
                         new
                         {
-                            Id = 3,
+                            ProductId = 3,
                             CategoryName = "Dessert",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
                             ImageUrl = "https://manorest.blob.core.windows.net/mango/11.jpg",
@@ -80,7 +80,7 @@ namespace Mango.Services.ProductAPI.Migrations
                         },
                         new
                         {
-                            Id = 4,
+                            ProductId = 4,
                             CategoryName = "Entree",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
                             ImageUrl = "https://manorest.blob.core.windows.net/mango/13.jpg",

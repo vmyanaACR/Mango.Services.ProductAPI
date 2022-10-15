@@ -5,7 +5,7 @@ namespace Mango.Services.ProductAPI.Models;
 public class Product
 {
     [Key]
-    public int Id { get; set; }
+    public int ProductId { get; set; }
     public string Name { get; set; }
     [Range(1, 10000)]
     public double Price { get; set; }

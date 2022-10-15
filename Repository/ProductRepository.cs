@@ -20,7 +20,7 @@ public class ProductRepository : IProductRepository
     public async Task<ProductDto> CreateUpdateProduct(ProductDto productDto)
     {
         Product product = _mapper.Map<ProductDto, Product>(productDto);
-        if (product.Id >0)
+        if (product.ProductId >0)
         {
             _applicationDbContext.Products.Update(product);
         }
@@ -36,7 +36,7 @@ public class ProductRepository : IProductRepository
     {
         try
         {
-            Product product = await _applicationDbContext.Products.FirstOrDefaultAsync(x=>x.Id == productId);
+            Product product = await _applicationDbContext.Products.FirstOrDefaultAsync(x=>x.ProductId == productId);
             if (product == null)
             {
                 return false;
@@ -54,7 +54,7 @@ public class ProductRepository : IProductRepository
 
     public async Task<ProductDto> GetProductById(int productId)
     {
-        Product product = await _applicationDbContext.Products.Where(x=>x.Id == productId).FirstOrDefaultAsync();
+        Product product = await _applicationDbContext.Products.Where(x=>x.ProductId == productId).FirstOrDefaultAsync();
         return _mapper.Map<ProductDto>(product);
     }
 
