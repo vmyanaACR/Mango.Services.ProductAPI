@@ -7,12 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace Mango.Services.ProductAPI.Controllers;
 
 [Route("api/products")]
-public class ProductsController : ControllerBase
+public class ProductsApiController : ControllerBase
 {
     protected ResponseDto _responseDto;
     private readonly IProductRepository _productRepository;
 
-    public ProductsController(IProductRepository productRepository)
+    public ProductsApiController(IProductRepository productRepository)
     {
         _productRepository = productRepository;
         _responseDto = new ResponseDto();

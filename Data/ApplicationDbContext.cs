@@ -52,5 +52,23 @@ public class ApplicationDbContext : DbContext
             ImageUrl = "https://manorest.blob.core.windows.net/mango/13.jpg",
             CategoryName = "Entree"
         });
+        modelBuilder.Entity<Product>().HasData(new Product
+        {
+            ProductId = 5,
+            Name = "Gulab Jamun",
+            Price = 20,
+            Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
+            ImageUrl = "https://manorest.blob.core.windows.net/mango/15.jpg",
+            CategoryName = "Dessert"
+        });
+        modelBuilder.Entity<Product>().HasData(new Product
+        {
+            ProductId = 6,
+            Name = "Biryani",
+            Price = 25,
+            Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
+            ImageUrl = "https://manorest.blob.core.windows.net/mango/16.jpg",
+            CategoryName = "Meals"
+        });
     }
 }
