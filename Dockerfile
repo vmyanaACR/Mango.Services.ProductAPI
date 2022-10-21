@@ -7,7 +7,7 @@ COPY *.csproj ./
 RUN dotnet restore
     
 # Copy everything else and build
-COPY ../engine/examples ./
+COPY ./Mango.Services.ProductAPI ./
 RUN dotnet publish -c Release -o out
     
 # Build runtime image
